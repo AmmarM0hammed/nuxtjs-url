@@ -14,8 +14,14 @@ const data = useAsyncData('urls', async()=>{
 
 
 const mydata = ref(data.data)
-const fullURL = () => {return window.location.host};
+const fullURL = ref('')
+onMounted(()=>{
+  data
+  fullURL.value = useGetURL()
+})
 
+
+console.log(useGetURL())
 
 </script>
 
@@ -36,7 +42,7 @@ const fullURL = () => {return window.location.host};
       <tr class="bg-base-200" v-for="(item, index) in mydata" :key="index">
         <th>{{index}}</th>
         <td>{{item.origin_url}}</td>
-        <td><a :href="'http://'+`${fullURL()+'/'+item.key_url}`" class="transition-all hover:text-primary" target="_blank">{{ item.key_url  }}</a></td>
+        <td><a :href="'http://'+`${fullURL+'/'+item.key_url}`" class="transition-all hover:text-primary" target="_blank">{{ item.key_url  }}</a></td>
       </tr>
     
     </tbody>
