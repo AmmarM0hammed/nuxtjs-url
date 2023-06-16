@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    *{
+        font-family: 'Plus Jakarta Sans', sans-serif;
+       
+    }
+
+    body{
+        @apply bg-base-100 text-white
+    }
+    
+   
+}
+
+@layer components{
+    .input{
+        @apply focus:outline-none border-solid border-2 border-transparent transition-all focus:border-primary outline-none hover:border-primary rounded-xl 
+    }
+    .bgImage{
+        background-image: url("~/assets/images/bg.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        
+    }
+     .navbar-button{
+        @apply bg-primary p-2 px-7 rounded-lg text-[15px] transition-all hover:shadow-xl active:scale-95 hover:brightness-90
+     }
+     .label-text-alt{
+        @apply text-error px-2 pt-1
+     }
+
+}
