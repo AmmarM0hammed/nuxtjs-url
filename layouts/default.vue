@@ -1,5 +1,10 @@
 <script setup>
 
+useHead({
+      title:"URL Cutter"
+})
+
+
 </script>
 <template>
       
